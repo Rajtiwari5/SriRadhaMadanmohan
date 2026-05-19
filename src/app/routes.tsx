@@ -4,6 +4,10 @@ import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { PackagesPage } from "./components/PackagesPage";
 import { PackageDetailPage } from "./components/PackageDetailPage";
+<<<<<<< HEAD
+=======
+import { GalleryPage } from "./components/GalleryPage";
+>>>>>>> f2a13046bc83064117438c4523f0547f3831b477
 import { VideosPage } from "./components/VideosPage";
 import { ContactPage } from "./components/ContactPage";
 
@@ -16,6 +20,10 @@ export const router = createBrowserRouter([
       { path: "about", Component: AboutPage },
       { path: "packages", Component: PackagesPage },
       { path: "packages/:id", Component: PackageDetailPage },
+<<<<<<< HEAD
+=======
+      { path: "gallery", Component: GalleryPage },
+>>>>>>> f2a13046bc83064117438c4523f0547f3831b477
       { path: "videos", Component: VideosPage },
       { path: "contact", Component: ContactPage },
       {

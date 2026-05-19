@@ -118,6 +118,39 @@ export function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+=======
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 bg-gradient-to-b from-orange-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[#E65100] text-sm tracking-widest uppercase" style={{ fontWeight: 600 }}>
+              {t("Why Choose Us", "हमें क्यों चुनें")}
+            </span>
+            <h2 className="text-2xl md:text-3xl text-gray-800 mt-2" style={{ fontWeight: 700 }}>
+              {t("Your Journey, Our Responsibility", "आपकी यात्रा, हमारी जिम्मेदारी")}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((f, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-orange-100"
+              >
+                <div className="text-[#E65100] mb-4">{f.icon}</div>
+                <h3 className="text-gray-800 mb-2" style={{ fontWeight: 600 }}>
+                  {lang === "en" ? f.titleEn : f.titleHi}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {lang === "en" ? f.descEn : f.descHi}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+>>>>>>> f2a13046bc83064117438c4523f0547f3831b477
       {/* Popular Tour Packages */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -177,6 +210,7 @@ export function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Why Choose Us */}
       <section className="py-16 px-4 bg-gradient-to-b from-orange-50 to-white">
         <div className="max-w-7xl mx-auto">
@@ -207,6 +241,8 @@ export function HomePage() {
         </div>
       </section>
 
+=======
+>>>>>>> f2a13046bc83064117438c4523f0547f3831b477
       {/* Testimonials */}
       <section className="py-16 px-4 bg-gradient-to-b from-orange-50 to-white">
         <div className="max-w-7xl mx-auto">

@@ -1,7 +1,7 @@
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1750405704388-1416715c359c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxIaW5kdSUyMHRlbXBsZSUyMEluZGlhJTIwZ29sZGVufGVufDF8fHx8MTc3MjEyNjA2NHww&ixlib=rb-4.1.0&q=80&w=1080",
   varanasi: "https://images.unsplash.com/photo-1741485332074-fa55a9c68fda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWYXJhbmFzaSUyMGdoYXQlMjBzdW5yaXNlfGVufDF8fHx8MTc3MjEyNjA2NXww&ixlib=rb-4.1.0&q=80&w=1080",
-  kedarnath: "https://res.cloudinary.com/dikn5wjzs/image/upload/v1779204380/pexels-abhra-ghosh-362148807-16152405_hy6bdb.jpg",
+  kedarnath: "https://images.unsplash.com/photo-1706752227538-d3a0c4c9cd2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDaGFyJTIwRGhhbSUyMEtlZGFybmF0aCUyMHRlbXBsZXxlbnwxfHx8fDE3NzIxMjYwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   vrindavan: "https://images.unsplash.com/photo-1723741799382-363a277a05d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWcmluZGF2YW4lMjB0ZW1wbGUlMjBLcmlzaG5hfGVufDF8fHx8MTc3MjEyNjA2NXww&ixlib=rb-4.1.0&q=80&w=1080",
   tirupati: "https://images.unsplash.com/photo-1701309171892-ddd6161fb004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxUaXJ1cGF0aSUyMEJhbGFqaSUyMHRlbXBsZXxlbnwxfHx8fDE3NzIxMjYwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   dwarka: "https://images.unsplash.com/photo-1717326630799-703fe906e283?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxEd2Fya2ElMjB0ZW1wbGUlMjBHdWphcmF0fGVufDF8fHx8MTc3MjEyNjA2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -277,6 +277,23 @@ export const tourPackages: TourPackage[] = [
       { en: "Travel insurance", hi: "यात्रा बीमा" },
     ],
   },
+];
+
+export const galleryImages = [
+  { id: 1, src: IMAGES.hero, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Golden Temple Architecture", captionHi: "स्वर्ण मंदिर वास्तुकला" },
+  { id: 2, src: IMAGES.varanasi, categoryEn: "Ghats", categoryHi: "घाट", captionEn: "Varanasi Ghats at Sunrise", captionHi: "सूर्योदय पर वाराणसी के घाट" },
+  { id: 3, src: IMAGES.kedarnath, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Kedarnath Temple", captionHi: "केदारनाथ मंदिर" },
+  { id: 4, src: IMAGES.vrindavan, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Vrindavan Krishna Temple", captionHi: "वृंदावन कृष्ण मंदिर" },
+  { id: 5, src: IMAGES.tirupati, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Tirupati Balaji", captionHi: "तिरुपति बालाजी" },
+  { id: 6, src: IMAGES.dwarka, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Dwarka Temple", captionHi: "द्वारका मंदिर" },
+  { id: 7, src: IMAGES.pilgrims, categoryEn: "Pilgrimage", categoryHi: "तीर्थयात्रा", captionEn: "Holy River Pilgrims", captionHi: "पवित्र नदी तीर्थयात्री" },
+  { id: 8, src: IMAGES.architecture, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Ornate Temple Architecture", captionHi: "सुंदर मंदिर वास्तुकला" },
+  { id: 9, src: IMAGES.aarti, categoryEn: "Ceremonies", categoryHi: "अनुष्ठान", captionEn: "Aarti Ceremony", captionHi: "आरती अनुष्ठान" },
+  { id: 10, src: IMAGES.mathura, categoryEn: "Temples", categoryHi: "मंदिर", captionEn: "Ancient Mathura Temple", captionHi: "प्राचीन मथुरा मंदिर" },
+  { id: 11, src: IMAGES.meditation, categoryEn: "Spiritual", categoryHi: "आध्यात्मिक", captionEn: "Spiritual Meditation", captionHi: "आध्यात्मिक ध्यान" },
+  { id: 12, src: IMAGES.himalaya, categoryEn: "Pilgrimage", categoryHi: "तीर्थयात्रा", captionEn: "Himalayan Pilgrimage", captionHi: "हिमालय तीर्थयात्रा" },
+  { id: 13, src: IMAGES.festival, categoryEn: "Ceremonies", categoryHi: "अनुष्ठान", captionEn: "Festival Celebration", captionHi: "त्योहार उत्सव" },
+  { id: 14, src: IMAGES.ganges, categoryEn: "Ghats", categoryHi: "घाट", captionEn: "Sacred Ganges Ceremony", captionHi: "पवित्र गंगा अनुष्ठान" },
 ];
 
 export const youtubeVideos = [
