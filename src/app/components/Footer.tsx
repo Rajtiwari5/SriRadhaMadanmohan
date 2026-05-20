@@ -10,23 +10,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
-<<<<<<< HEAD
           <div className="flex items-center mb-4">
             <img
               src="https://res.cloudinary.com/dikn5wjzs/image/upload/v1779121565/trithyatra_logo-removebg-preview_szoobf.png"
               alt={t("Sri Madanmohan Tirth Yatra", "श्री मदनमोहन तीर्थ यात्रा")}
               className="h-12 w-auto"
             />
-=======
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-3xl">🕉</span>
-            <div>
-              <span className="text-white text-lg" style={{ fontWeight: 700 }}>
-                {t("Sri Madanmohan", "श्री मदनमोहन")}
-              </span>
-              <span className="block text-orange-300 text-sm">{t("Tirth Yatra", "तीर्थ यात्रा")}</span>
-            </div>
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
           </div>
           <p className="text-orange-200/80 text-sm leading-relaxed">
             {t(
@@ -44,10 +33,6 @@ export function Footer() {
               { to: "/", label: t("Home", "होम") },
               { to: "/about", label: t("About Us", "हमारे बारे में") },
               { to: "/packages", label: t("Tour Packages", "तीर्थ यात्रा पैकेज") },
-<<<<<<< HEAD
-=======
-              { to: "/gallery", label: t("Gallery", "गैलरी") },
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
               { to: "/videos", label: t("Videos", "वीडियो") },
               { to: "/contact", label: t("Contact", "संपर्क") },
             ].map((item) => (
@@ -97,11 +82,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 flex justify-center items-center gap-6 mb-4">
           <span className="text-orange-200/60 text-sm">{t("Follow Us:", "हमसे जुड़ें:")}</span>
           <a href="#" className="text-orange-100 hover:text-white transition-colors">Facebook</a>
-<<<<<<< HEAD
           <a href="https://www.instagram.com/srimadanmohan_tirth_yatra?igsh=ajZnMjExbmtoamgw" target="_blank" rel="noopener noreferrer" className="text-orange-100 hover:text-white transition-colors">Instagram</a>
-=======
-          <a href="#" className="text-orange-100 hover:text-white transition-colors">Instagram</a>
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
           <a href="https://youtube.com/@purebhakticenterjaipur7577?si=tXJQtGdGYKbRsiri" target="_blank" rel="noopener noreferrer" className="text-orange-100 hover:text-white transition-colors">YouTube</a>
         </div>
         <div className="text-center text-sm text-orange-200/60">
