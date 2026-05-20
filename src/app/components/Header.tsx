@@ -12,10 +12,6 @@ export function Header() {
     { path: "/", label: t("Home", "होम") },
     { path: "/about", label: t("About Us", "हमारे बारे में") },
     { path: "/packages", label: t("Tour Packages", "तीर्थ यात्रा पैकेज") },
-<<<<<<< HEAD
-=======
-    { path: "/gallery", label: t("Gallery", "गैलरी") },
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
     { path: "/videos", label: t("Videos", "वीडियो") },
     { path: "/contact", label: t("Contact", "संपर्क") },
   ];
@@ -36,11 +32,9 @@ export function Header() {
           <div className="flex items-center gap-3">
             <span>{t("Follow Us:", "हमसे जुड़ें:")}</span>
             <a href="#" className="hover:text-orange-200">Facebook</a>
-<<<<<<< HEAD
             <a href="https://www.instagram.com/srimadanmohan_tirth_yatra?igsh=ajZnMjExbmtoamgw" target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">Instagram</a>
 =======
             <a href="#" className="hover:text-orange-200">Instagram</a>
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
             <a href="https://youtube.com/@purebhakticenterjaipur7577?si=tXJQtGdGYKbRsiri" target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">YouTube</a>
           </div>
         </div>
@@ -50,25 +44,12 @@ export function Header() {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-<<<<<<< HEAD
           <Link to="/" className="flex items-center">
             <img
               src="https://res.cloudinary.com/dikn5wjzs/image/upload/v1779121565/trithyatra_logo-removebg-preview_szoobf.png"
               alt={t("Sri Madanmohan Tirth Yatra", "श्री मदनमोहन तीर्थ यात्रा")}
               className="h-15 md:h-27 w-auto"
             />
-=======
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl text-[#E65100]">🕉</span>
-            <div className="leading-tight">
-              <span className="text-[#E65100] text-lg md:text-xl" style={{ fontWeight: 700 }}>
-                {t("Sri Madanmohan", "श्री मदनमोहन")}
-              </span>
-              <span className="block text-[#BF360C] text-xs md:text-sm">
-                {t("Tirth Yatra", "तीर्थ यात्रा")}
-              </span>
-            </div>
->>>>>>> f2a13046bc83064117438c4523f0547f3831b477
           </Link>
 
           {/* Desktop nav */}
