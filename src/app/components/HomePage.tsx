@@ -27,7 +27,7 @@ export function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-          <span className="text-6xl md:text-8xl mb-4 drop-shadow-lg">🕉</span>
+          {/* <span className="text-6xl md:text-8xl mb-4 drop-shadow-lg">🕉</span> */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl mb-4 drop-shadow-lg" style={{ fontWeight: 700 }}>
             {t("Sri Madanmohan", "श्री मदनमोहन")}
           </h1>

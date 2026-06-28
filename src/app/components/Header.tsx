@@ -31,10 +31,9 @@ export function Header() {
           </div>
           <div className="flex items-center gap-3">
             <span>{t("Follow Us:", "हमसे जुड़ें:")}</span>
-            <a href="#" className="hover:text-orange-200">Facebook</a>
+            <a href="https://www.facebook.com/people/Sri-Madanmohan-Tirth-Yatra/61589828699943/?mibextid=wwXIfr&rdid=xgZMOZE1VLw87l2Y&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1bRzBdgne1%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">Facebook</a>
             <a href="https://www.instagram.com/srimadanmohan_tirth_yatra?igsh=ajZnMjExbmtoamgw" target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">Instagram</a>
-=======
-            <a href="#" className="hover:text-orange-200">Instagram</a>
+            
             <a href="https://youtube.com/@purebhakticenterjaipur7577?si=tXJQtGdGYKbRsiri" target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">YouTube</a>
           </div>
         </div>
