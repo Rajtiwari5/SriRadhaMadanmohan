@@ -1,5 +1,5 @@
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1750405704388-1416715c359c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxIaW5kdSUyMHRlbXBsZSUyMEluZGlhJTIwZ29sZGVufGVufDF8fHx8MTc3MjEyNjA2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+  hero: "https://res.cloudinary.com/dbtn0vhtf/image/upload/v1784649969/small_govid_dev-Picsart-AiImageEnhancer_bpyffr.jpg",
   varanasi: "https://images.unsplash.com/photo-1741485332074-fa55a9c68fda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWYXJhbmFzaSUyMGdoYXQlMjBzdW5yaXNlfGVufDF8fHx8MTc3MjEyNjA2NXww&ixlib=rb-4.1.0&q=80&w=1080",
   //kedarnath: "https://images.unsplash.com/photo-1706752227538-d3a0c4c9cd2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDaGFyJTIwRGhhbSUyMEtlZGFybmF0aCUyMHRlbXBsZXxlbnwxfHx8fDE3NzIxMjYwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   kedarnath:"https://res.cloudinary.com/dbtn0vhtf/image/upload/v1782474434/shikhar-sharma-Pf-rTGteWyc-unsplash_oskexr.jpg",
