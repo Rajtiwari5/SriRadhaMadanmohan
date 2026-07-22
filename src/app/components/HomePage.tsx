@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { MapPin, Users, Star, Shield, Clock, HeartHandshake, ChevronRight } from "lucide-react";
+import { MapPin, Users, Star, Shield, Clock, HeartHandshake, ChevronRight, Calendar } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { IMAGES, tourPackages, testimonials } from "./data";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -149,9 +149,15 @@ export function HomePage() {
                   <h3 className="text-gray-800 text-lg mb-1" style={{ fontWeight: 600 }}>
                     {lang === "en" ? pkg.nameEn : pkg.nameHi}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                    <Clock className="w-4 h-4" />
-                    {lang === "en" ? pkg.duration : pkg.durationHi}
+                  <div className="flex flex-col gap-1 mb-3 text-sm text-gray-500">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#E65100]" />
+                      {lang === "en" ? pkg.duration : pkg.durationHi}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-[#E65100]" />
+                      {lang === "en" ? pkg.datesEn : pkg.datesHi}
+                    </div>
                   </div>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {lang === "en" ? pkg.descEn : pkg.descHi}

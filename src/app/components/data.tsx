@@ -46,8 +46,8 @@ export const tourPackages: TourPackage[] = [
     duration: "14 Days / 13 Nights",
     durationHi: "14 दिन / 13 रातें",
     price: "₹27,000",
-    datesEn: "Batch 1: 30 Apr – 13 May 2026\nBatch 2: 28 May – 10 Jun 2026",
-    datesHi: "बैच 1: 30 अप्रैल – 13 मई 2026\nबैच 2: 28 मई – 10 जून 2026",
+    datesEn: "23 Sept – 06 Oct 2026",
+    datesHi: "23 सितंबर – 06 अक्टूबर 2026",
     image: IMAGES.kedarnath,
     highlights: [
       { en: "AC 27-seater bus from Jaipur (round trip)", hi: "जयपुर से एसी 27 सीटर बस (आना-जाना)" },
@@ -171,8 +171,8 @@ export const tourPackages: TourPackage[] = [
     duration: "6 Days / 5 Nights",
     durationHi: "6 दिन / 5 रातें",
     price: "₹15,999",
-    datesEn: "Dates to be Announced",
-    datesHi: "तारीखें घोषित की जाएंगी",
+    datesEn: "06 Jan – 11 Jan 2027",
+    datesHi: "06 जनवरी – 11 जनवरी 2027",
     image: IMAGES.dwarka,
     highlights: [
       { en: "Dwarkadhish Temple darshan", hi: "द्वारकाधीश मंदिर दर्शन" },
@@ -301,8 +301,8 @@ export const tourPackages: TourPackage[] = [
     duration: "6 Days / 5 Nights",
     durationHi: "7 दिन / 6 रातें",
     price: "₹23,000 (Delhi to Delhi) | ₹25,500 (Jaipur to Jaipur) + Airfare",
-    datesEn: "13 Aug – 19 Aug 2026",
-    datesHi: "13 अगस्त – 19 अगस्त 2026",
+    datesEn: "08 Sept – 13 Sept 2026",
+    datesHi: "08 सितंबर – 13 सितंबर 2026",
     image: IMAGES.nepal,
     highlights: [
       { en: "Pashupatinath Temple, Guheshwori Temple, Swyambhunath, Boudhanath & Kathmandu Durbar Square", hi: "पशुपतिनाथ, गुह्येश्वरी मंदिर, स्वयंभूनाथ स्तूप, बौद्धनाथ एवं काठमांडू दरबार स्क्वायर के दर्शन" },

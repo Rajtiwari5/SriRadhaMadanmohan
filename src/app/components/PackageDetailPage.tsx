@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { Clock, ChevronRight, ChevronLeft, Check, X, MapPin } from "lucide-react";
+import { Clock, ChevronRight, ChevronLeft, Check, X, MapPin, Calendar } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "./LanguageContext";
 import { tourPackages } from "./data";
@@ -44,6 +44,9 @@ export function PackageDetailPage() {
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" /> {lang === "en" ? pkg.duration : pkg.durationHi}
             </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" /> {lang === "en" ? pkg.datesEn : pkg.datesHi}
+            </span>
             <span className="bg-[#E65100] text-white px-4 py-1 rounded-full" style={{ fontWeight: 700 }}>
               {t("Starting from", "शुरू")} {pkg.price} {t("per person", "प्रति व्यक्ति")}
             </span>
@@ -60,6 +63,17 @@ export function PackageDetailPage() {
               <h2 className="text-xl text-gray-800 mb-4" style={{ fontWeight: 700 }}>
                 {t("About This Yatra", "इस यात्रा के बारे में")}
               </h2>
+              <div className="flex items-center gap-3 bg-orange-50 p-4 rounded-lg mb-4 border border-orange-100">
+                <Calendar className="w-6 h-6 text-[#E65100]" />
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider" style={{ fontWeight: 600 }}>
+                    {t("Yatra Dates", "यात्रा की तिथियाँ")}
+                  </div>
+                  <div className="text-gray-800 text-lg mt-0.5" style={{ fontWeight: 700 }}>
+                    {lang === "en" ? pkg.datesEn : pkg.datesHi}
+                  </div>
+                </div>
+              </div>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {lang === "en" ? pkg.descEn : pkg.descHi}
               </p>
@@ -173,6 +187,10 @@ export function PackageDetailPage() {
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <Clock className="w-4 h-4 text-[#E65100]" />
                   {lang === "en" ? pkg.duration : pkg.durationHi}
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#E65100]" />
+                  {lang === "en" ? pkg.datesEn : pkg.datesHi}
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <MapPin className="w-4 h-4 text-[#E65100]" />

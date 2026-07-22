@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Clock, ChevronRight } from "lucide-react";
+import { Clock, ChevronRight, Calendar } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { IMAGES, tourPackages } from "./data";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -57,9 +57,15 @@ export function PackagesPage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                    <Clock className="w-4 h-4" />
-                    {lang === "en" ? pkg.duration : pkg.durationHi}
+                  <div className="flex flex-col gap-1 mb-3 text-sm text-gray-500">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#E65100]" />
+                      {lang === "en" ? pkg.duration : pkg.durationHi}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-[#E65100]" />
+                      {lang === "en" ? pkg.datesEn : pkg.datesHi}
+                    </div>
                   </div>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     {lang === "en" ? pkg.descEn : pkg.descHi}
