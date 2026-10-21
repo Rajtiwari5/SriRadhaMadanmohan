@@ -1,0 +1,6 @@
+{
+  "name": "Sri Radha Madanmohan Tirth Yatra Jaipur",
+  "description": "Official pilgrimage portal for South Yatra 2027 and Dwarka-Somnath Yatra organized by Sri Madan Mohan Tirth Yatra Jaipur (Dr J P Agrawal). Itineraries, AC stay, 3-AC train, satvik prasadam, and seat bookings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

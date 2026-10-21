@@ -49,12 +49,31 @@ export function Footer() {
         <div>
           <h3 className="text-white mb-4" style={{ fontWeight: 600 }}>{t("Popular Tours", "लोकप्रिय यात्राएं")}</h3>
           <ul className="space-y-2 text-sm">
-            <li>{t("Char Dham Yatra", "चार धाम यात्रा")}</li>
-            <li>{t("Vrindavan-Mathura Tour", "वृंदावन-मथुरा दर्शन")}</li>
-            <li>{t("Kashi Vishwanath Yatra", "काशी विश्वनाथ यात्रा")}</li>
-            <li>{t("Dwarka-Somnath Tour", "द्वारका-सोमनाथ यात्रा")}</li>
-            <li>{t("Tirupati Balaji Darshan", "तिरुपति बालाजी दर्शन")}</li>
-            <li>{t("Amarnath Yatra", "अमरनाथ यात्रा")}</li>
+            <li>
+              <Link to="/packages/south-yatra-2027" className="hover:text-white transition-colors">
+                → {t("South Yatra 2027 (14 Days)", "साउथ यात्रा २०२७ (१४ दिन)")}
+              </Link>
+            </li>
+            <li>
+              <Link to="/packages/dwarka-somnath" className="hover:text-white transition-colors">
+                → {t("Dwarka-Somnath Yatra (7 Days)", "द्वारका-सोमनाथ यात्रा (७ दिन)")}
+              </Link>
+            </li>
+            <li>
+              <Link to="/packages/char-dham" className="hover:text-white transition-colors">
+                → {t("Char Dham Yatra 2026", "चार धाम यात्रा २०२६")}
+              </Link>
+            </li>
+            <li>
+              <Link to="/packages/puri-gangasagar-2026" className="hover:text-white transition-colors">
+                → {t("Jagannath Puri & Baidhyanath Dham", "जगन्नाथ पुरी व बैद्यनाथ धाम")}
+              </Link>
+            </li>
+            <li>
+              <Link to="/packages/nepal-kathmandu-pokhara-muktinath" className="hover:text-white transition-colors">
+                → {t("Nepal Muktinath Yatra", "नेपाल मुक्तिनाथ यात्रा")}
+              </Link>
+            </li>
           </ul>
         </div>
 

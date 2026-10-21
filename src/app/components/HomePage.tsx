@@ -74,6 +74,171 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Featured Upcoming Yatras Spotlight */}
+      <section className="py-12 px-4 bg-amber-50/60 border-b border-orange-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <span className="text-[#E65100] text-xs font-bold tracking-widest uppercase">
+                {t("Special Departure from Jaipur Junction", "जयपुर जंक्शन से विशेष प्रस्थान")}
+              </span>
+              <h2 className="text-2xl md:text-3xl text-gray-900 mt-1" style={{ fontWeight: 700 }}>
+                {t("Featured Upcoming Yatras 2027", "आगामी प्रमुख तीर्थ यात्राएं २०२७")}
+              </h2>
+              <p className="text-gray-600 text-sm mt-1">
+                {t("Organized by Dr. J. P. Agrawal (9414248951) with 3-AC train, AC bus, AC rooms & pure satvik prasadam", "डॉ. जे. पी. अग्रवाल (9414248951) द्वारा आयोजित: 3-AC ट्रेन, एसी बस, एसी रूम्स व सात्विक प्रसादम")}
+              </p>
+            </div>
+            <Link
+              to="/packages"
+              className="text-[#E65100] hover:text-[#BF360C] text-sm font-semibold inline-flex items-center gap-1 self-start md:self-auto"
+            >
+              {t("Explore All Packages →", "सभी पैकेज देखें →")}
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* South Yatra 2027 Card */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border-2 border-orange-200/80 hover:shadow-xl transition-all flex flex-col justify-between">
+              <div>
+                <div className="relative h-56 sm:h-64 overflow-hidden">
+                  <ImageWithFallback
+                    src={IMAGES.southYatraHero || IMAGES.tirupati}
+                    alt="South Yatra 2027"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  <div className="absolute top-3 left-3 bg-[#BF360C] text-white text-xs px-3 py-1 rounded-full font-bold">
+                    {t("Marquee Pilgrimage", "प्रमुख महातीर्थ")}
+                  </div>
+                  <div className="absolute top-3 right-3 bg-[#E65100] text-white px-3.5 py-1 rounded-full text-base font-bold tabular-nums">
+                    ₹41,000
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <div className="text-xs text-orange-200 font-semibold mb-0.5">31 Jan – 13 Feb 2027 · 14 Days / 13 Nights</div>
+                    <h3 className="text-xl sm:text-2xl font-bold leading-tight">
+                      {t("South Yatra 2027 (Dakshin Bharat)", "साउथ यात्रा २०२७ (दक्षिण भारत महातीर्थ)")}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 mb-4 leading-relaxed">
+                    {t(
+                      "Train tickets in Anuvrat SF express & Rajdhani express from Jaipur. Sacred darshan of Rameswaram (22 Kuon Snan & Samudra Snan), Dhanushkodi, Tirupati Balaji, Srisailam Mallikarjuna, Ahobilam, Srirangam, Vellore Golden Temple, Kanyakumari, and Padmanabhaswamy.",
+                      "जयपुर से अणुव्रत सुपरफास्ट व राजधानी एक्सप्रेस में 3-AC ट्रेन टिकट। रामेश्वरम (22 कुआं व समुद्र स्नान), धनुषकोडी, तिरुपति बालाजी, श्रीशैलम, अहोबिलम, श्रीरंगम, वेल्लोर, कन्याकुमारी और पद्मनाभ स्वामी दर्शन।"
+                    )}
+                  </p>
+
+                  <div className="space-y-1.5 text-xs text-gray-700 bg-orange-50/60 p-3 rounded-lg border border-orange-100 mb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-800">{t("Booking Advance Token:", "बुकिंग अग्रिम राशि:")}</span>
+                      <strong className="text-emerald-800 font-bold tabular-nums">₹7,000 / seat</strong>
+                    </div>
+                    <div className="flex items-center justify-between text-gray-600">
+                      <span>{t("Stays Included:", "ठहराव:")}</span>
+                      <span>2 N Rameshwaram, 2 N Tirupati, AC Rooms</span>
+                    </div>
+                    <div className="flex items-center justify-between text-gray-600">
+                      <span>{t("Prasadam:", "प्रसादम:")}</span>
+                      <span>100% Satvik (No Onion/Garlic) + Train Meals</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-5 pt-0 flex items-center gap-3">
+                <Link
+                  to="/packages/south-yatra-2027"
+                  className="flex-1 bg-[#E65100] hover:bg-[#BF360C] text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm text-center transition-colors shadow-xs"
+                >
+                  {t("View Itinerary & Book", "पूरा कार्यक्रम व बुकिंग")}
+                </Link>
+                <a
+                  href={`https://wa.me/919414248951?text=${encodeURIComponent("Namaste Dr. J. P. Agrawal ji, I want to book seats for South Yatra 2027.")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-xs font-semibold"
+                  title="WhatsApp Dr. Agrawal"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* Dwarka-Somnath Card */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border-2 border-orange-200/80 hover:shadow-xl transition-all flex flex-col justify-between">
+              <div>
+                <div className="relative h-56 sm:h-64 overflow-hidden">
+                  <ImageWithFallback
+                    src={IMAGES.dwarkaSomnathHero || IMAGES.dwarka}
+                    alt="Dwarka-Somnath Yatra 2027"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  <div className="absolute top-3 left-3 bg-[#BF360C] text-white text-xs px-3 py-1 rounded-full font-bold">
+                    {t("Saurashtra Panch Tirth", "सौराष्ट्र पंचतीर्थ")}
+                  </div>
+                  <div className="absolute top-3 right-3 bg-[#E65100] text-white px-3.5 py-1 rounded-full text-base font-bold tabular-nums">
+                    ₹17,000
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <div className="text-xs text-orange-200 font-semibold mb-0.5">05 Jan – 11 Jan 2027 · 7 Days / 6 Nights</div>
+                    <h3 className="text-xl sm:text-2xl font-bold leading-tight">
+                      {t("Dwarka – Somnath Yatra 2027", "द्वारका — सोमनाथ यात्रा २०२७")}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 mb-4 leading-relaxed">
+                    {t(
+                      "Travel comfortably from Jaipur by 3-AC or 2-AC train. Sacred darshan of Lord Dwarkadhish, Rukmani Temple, Nageswar Jyotirling, Bet Dwarka, Gopi Tala, Somnath Jyotirling on the ocean, Diu Beach, and Gir National Park.",
+                      "जयपुर से 3-AC या 2-AC ट्रेन द्वारा यात्रा। द्वारकाधीश मंदिर, रुक्मिणी मंदिर, नागेश्वर ज्योतिर्लिंग, बेट द्वारका, गोपी तालाब, सोमनाथ ज्योतिर्लिंग, दीव बीच व गिर नेशनल पार्क दर्शन।"
+                    )}
+                  </p>
+
+                  <div className="space-y-1.5 text-xs text-gray-700 bg-orange-50/60 p-3 rounded-lg border border-orange-100 mb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-800">{t("Booking Advance Token:", "बुकिंग अग्रिम राशि:")}</span>
+                      <strong className="text-emerald-800 font-bold tabular-nums">₹5,000 / seat</strong>
+                    </div>
+                    <div className="flex items-center justify-between text-gray-600">
+                      <span>{t("Stays Included:", "ठहराव:")}</span>
+                      <span>2 N Dwarka + 2 N Somnath (AC Rooms)</span>
+                    </div>
+                    <div className="flex items-center justify-between text-gray-600">
+                      <span>{t("Prasadam:", "प्रसादम:")}</span>
+                      <span>Pure Satvik (No Onion/Garlic) + Train Meals</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-5 pt-0 flex items-center gap-3">
+                <Link
+                  to="/packages/dwarka-somnath"
+                  className="flex-1 bg-[#E65100] hover:bg-[#BF360C] text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm text-center transition-colors shadow-xs"
+                >
+                  {t("View Itinerary & Book", "पूरा कार्यक्रम व बुकिंग")}
+                </Link>
+                <a
+                  href={`https://wa.me/919414248951?text=${encodeURIComponent("Namaste Dr. J. P. Agrawal ji, I want to book seats for Dwarka-Somnath Yatra.")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-xs font-semibold"
+                  title="WhatsApp Dr. Agrawal"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* About Preview */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">

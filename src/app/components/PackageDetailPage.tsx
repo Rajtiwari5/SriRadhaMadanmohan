@@ -12,6 +12,14 @@ export function PackageDetailPage() {
 
   const pkg = tourPackages.find((p) => p.id === id);
 
+  const [yatriCount, setYatriCount] = useState<number>(2);
+  const [coachType, setCoachType] = useState<"3-AC" | "2-AC">("3-AC");
+
+  const basePriceNum = pkg ? parseInt(pkg.price.replace(/[^0-9]/g, "")) || 0 : 0;
+  const upgradeCost = coachType === "2-AC" ? (pkg?.id === "south-yatra-2027" ? 5500 : 2800) : 0;
+  const calculatedPrice = basePriceNum + upgradeCost;
+  const numericAdvance = pkg?.bookingAmount ? parseInt(pkg.bookingAmount.replace(/[^0-9]/g, "")) || 0 : (pkg?.id === "south-yatra-2027" ? 7000 : 5000);
+
   if (!pkg) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4">
@@ -177,48 +185,132 @@ export function PackageDetailPage() {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Booking Card */}
+            {/* Booking & Fare Calculator Card */}
             <div className="bg-white rounded-xl p-6 shadow-md border border-orange-100 sticky top-24">
               <div className="text-center mb-4">
                 <span className="text-3xl text-[#E65100]" style={{ fontWeight: 700 }}>{pkg.price}</span>
-                <span className="text-gray-500 text-sm block">{t("per person", "प्रति व्यक्ति")}</span>
+                <span className="text-gray-500 text-sm block">{t("per person (3-AC)", "प्रति व्यक्ति (3-AC)")}</span>
+                {pkg.bookingAmount && (
+                  <div className="inline-block mt-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-full text-xs font-semibold text-amber-900">
+                    {t("Booking Advance:", "बुकिंग अग्रिम राशि:")} {pkg.bookingAmount} {t("per seat", "प्रति सीट")}
+                  </div>
+                )}
               </div>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Clock className="w-4 h-4 text-[#E65100]" />
-                  {lang === "en" ? pkg.duration : pkg.durationHi}
+
+              <div className="space-y-2.5 mb-5 text-sm text-gray-600 bg-orange-50/50 p-3.5 rounded-lg border border-orange-100">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#E65100] shrink-0" />
+                  <span>{lang === "en" ? pkg.duration : pkg.durationHi}</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Calendar className="w-4 h-4 text-[#E65100]" />
-                  {lang === "en" ? pkg.datesEn : pkg.datesHi}
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-[#E65100] shrink-0" />
+                  <span>{lang === "en" ? pkg.datesEn : pkg.datesHi}</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <MapPin className="w-4 h-4 text-[#E65100]" />
-                  {t("Multiple destinations", "विभिन्न गंतव्य")}
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#E65100] shrink-0" />
+                  <span>{t("Departure: Jaipur Junction", "प्रस्थान: जयपुर जंक्शन")}</span>
                 </div>
               </div>
+
+              {/* Interactive Yatri Fare Calculator */}
+              <div className="mb-5 p-4 bg-stone-50 rounded-lg border border-stone-200">
+                <div className="text-xs font-bold text-gray-800 uppercase tracking-wide mb-3 flex items-center justify-between">
+                  <span>{t("Seat & Fare Calculator", "सीट एवं किराया कैलकुलेटर")}</span>
+                </div>
+
+                <div className="space-y-3 text-xs">
+                  <div>
+                    <label className="block text-gray-600 mb-1 font-medium">
+                      {t("Number of Yatris / Persons:", "यात्रियों की संख्या:")}
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setYatriCount(Math.max(1, yatriCount - 1))}
+                        className="w-8 h-8 rounded border border-gray-300 bg-white font-bold hover:bg-gray-100 flex items-center justify-center cursor-pointer text-sm"
+                      >
+                        -
+                      </button>
+                      <span className="w-12 text-center font-bold text-base text-gray-900 tabular-nums">
+                        {yatriCount}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setYatriCount(yatriCount + 1)}
+                        className="w-8 h-8 rounded border border-gray-300 bg-white font-bold hover:bg-gray-100 flex items-center justify-center cursor-pointer text-sm"
+                      >
+                        +
+                      </button>
+                      <span className="text-gray-500 ml-1">{t("Person(s)", "व्यक्ति")}</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-600 mb-1 font-medium">
+                      {t("Train Coach Preference:", "ट्रेन श्रेणी:")}
+                    </label>
+                    <select
+                      value={coachType}
+                      onChange={(e) => setCoachType(e.target.value as "3-AC" | "2-AC")}
+                      className="w-full p-2 border border-gray-300 rounded bg-white text-xs"
+                    >
+                      <option value="3-AC">3-AC {t("(Standard Included)", "(पैकेज में शामिल)")}</option>
+                      <option value="2-AC">2-AC {t("(Upgrade Option)", "(अपग्रेड विकल्प)")}</option>
+                    </select>
+                  </div>
+
+                  {/* Calculated Totals */}
+                  <div className="pt-2 border-t border-gray-200 space-y-1.5 text-gray-700">
+                    <div className="flex justify-between items-center">
+                      <span>{t("Total Fare:", "कुल पैकेज किराया:")}</span>
+                      <strong className="text-sm text-gray-900 tabular-nums">
+                        ₹{(calculatedPrice * yatriCount).toLocaleString("en-IN")}
+                      </strong>
+                    </div>
+                    {numericAdvance > 0 && (
+                      <div className="flex justify-between items-center text-emerald-800 font-semibold">
+                        <span>{t("Advance Token Today:", "बुकिंग टोकन आज:")}</span>
+                        <strong className="text-sm tabular-nums">
+                          ₹{(numericAdvance * yatriCount).toLocaleString("en-IN")}
+                        </strong>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
               <a
                 href={`https://wa.me/919414248951?text=${encodeURIComponent(
-                  `Namaste! I am interested in the ${pkg.nameEn} package (${pkg.price}).`
+                  `Jai Sri Krishna! I am inquiring for ${yatriCount} person(s) for ${pkg.nameEn} (${coachType} train from Jaipur).\nDates: ${pkg.datesEn}\nTotal Fare: ₹${(calculatedPrice * yatriCount).toLocaleString("en-IN")}\nAdvance Token: ₹${(numericAdvance * yatriCount).toLocaleString("en-IN")}.\nPlease confirm seat availability and bank/UPI details.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-full flex items-center justify-center gap-2 transition-colors mb-3"
+                className="w-full bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors mb-2.5 text-sm font-semibold shadow-xs"
               >
-                📱 {t("Enquire on WhatsApp", "WhatsApp पर पूछताछ करें")}
+                <span>📱 {t("Book on WhatsApp", "WhatsApp पर बुक करें")}</span>
               </a>
-              <Link
-                to="/contact"
-                className="w-full border-2 border-[#E65100] text-[#E65100] hover:bg-[#E65100] hover:text-white px-5 py-2.5 rounded-full flex items-center justify-center gap-2 transition-colors text-sm"
-              >
-                {t("Contact Us", "संपर्क करें")} <ChevronRight className="w-4 h-4" />
-              </Link>
 
-              <div className="mt-6 pt-4 border-t border-orange-100">
-                <p className="text-xs text-gray-500 text-center">
+              <a
+                href="tel:9414248951"
+                className="w-full bg-orange-50 hover:bg-orange-100 text-[#E65100] border border-[#E65100] px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm font-semibold mb-2.5"
+              >
+                <span>📞 {t("Call Dr J P Agrawal: 9414248951", "कॉल करें: 9414248951")}</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="w-full bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 px-4 py-2 rounded-lg flex items-center justify-center gap-1.5 transition-colors text-xs font-medium cursor-pointer"
+              >
+                <span>🖨️ {t("Print Yatra Circular / Patrika", "यात्रा परिपत्र प्रिंट करें")}</span>
+              </button>
+
+              <div className="mt-5 pt-4 border-t border-orange-100">
+                <p className="text-xs text-gray-500 text-center leading-relaxed">
                   {t(
-                    "Call Dr J P Agrawal (Jagannath Das): +91 94142 48951",
-                    "कॉल करें: डॉ. जे पी अग्रवाल (जगन्नाथ दास): +91 94142 48951"
+                    "Organizer: Dr. J. P. Agrawal (Jaipur) · Mob: +91 94142 48951. Pure Satvik food (no onion/garlic).",
+                    "मुख्य आयोजक: डॉ. जे. पी. अग्रवाल (जयपुर) · मो.: +91 94142 48951। शुद्ध सात्विक भोजन (बिना प्याज-लहसुन)।"
                   )}
                 </p>
               </div>
