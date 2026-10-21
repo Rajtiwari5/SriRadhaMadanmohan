@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import { Menu, X, Globe, Phone, Volume2, VolumeX } from "lucide-react";
+import { Menu, X, Globe, Phone } from "lucide-react";
 import { useLang } from "./LanguageContext";
-import { devotionalAudio } from "../../utils/devotionalAudio";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const { lang, setLang, t } = useLang();
   const location = useLocation();
 
@@ -70,33 +68,8 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Audio Chants + Language + Mobile toggle */}
+          {/* Language + Mobile toggle */}
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                const s = devotionalAudio.toggle();
-                setIsPlayingAudio(s);
-              }}
-              title={isPlayingAudio ? "Mute sacred temple chants" : "Play sacred temple chimes & tanpura"}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-full border text-xs font-semibold transition-colors cursor-pointer ${
-                isPlayingAudio
-                  ? "border-amber-600 bg-amber-50 text-amber-800"
-                  : "border-stone-300 text-stone-600 hover:border-amber-600 hover:text-amber-700"
-              }`}
-            >
-              {isPlayingAudio ? (
-                <>
-                  <Volume2 className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
-                  <span className="hidden sm:inline">Chants On</span>
-                </>
-              ) : (
-                <>
-                  <VolumeX className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Chants</span>
-                </>
-              )}
-            </button>
-
             <button
               onClick={() => setLang(lang === "en" ? "hi" : "en")}
               className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-[#E65100] text-[#E65100] hover:bg-[#E65100] hover:text-white transition-colors text-sm cursor-pointer"
