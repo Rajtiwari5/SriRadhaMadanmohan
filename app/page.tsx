@@ -1,7 +1,5 @@
-import { HomeView } from "@/components/views/HomeView";
-
-export const revalidate = 86400;
+import { LegacyHomePage } from "@/components/legacy/HomePage";
 
 export default function Page() {
-  return <HomeView />;
+  return <LegacyHomePage />;
 }

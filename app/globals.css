@@ -20,7 +20,7 @@
   --color-leaf: #1f7a4d;
 
   --font-display: "Yatra One", "Mukta", serif;
-  --font-sans: "Mukta", system-ui, sans-serif;
+  --font-sans: "Poppins", "Noto Sans Devanagari", system-ui, sans-serif;
 
   --text-base: 1.0625rem; /* 17px — comfortable for older readers */
 }
@@ -31,7 +31,7 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background: var(--color-paper);
+    background: #fff8f0;
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: var(--text-base);
@@ -158,4 +158,16 @@
   .prose-yatra p + p {
     margin-top: 1rem;
   }
+}
+
+/* Restored original home page: headings use the body font, as before */
+.legacy-home h1,
+.legacy-home h2,
+.legacy-home h3 {
+  font-family: inherit;
+  line-height: 1.5;
+  color: inherit;
+}
+.legacy-home {
+  font-size: 1rem;
 }
