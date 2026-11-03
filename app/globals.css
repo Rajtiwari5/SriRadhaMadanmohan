@@ -2,24 +2,24 @@
 
 /*
   Sri Madanmohan Tirth Yatra — design tokens
-  Neelkanth indigo carries structure, marigold carries action,
-  kumkum marks the sacred, sandstone is Jaipur's own stone.
+  Orange theme matching the home page. Token names kept from the
+  earlier palette so components did not need renaming.
 */
 @theme {
-  --color-indigo-night: #1b2155;
-  --color-indigo-deep: #121641;
-  --color-indigo-soft: #2b3373;
-  --color-marigold: #f2a007;
-  --color-marigold-light: #ffd27a;
-  --color-kumkum: #b3122e;
-  --color-sandstone: #f1e3cf;
-  --color-sandstone-deep: #e3cba9;
-  --color-ink: #23201c;
-  --color-ink-soft: #5a524a;
+  --color-indigo-night: #e65100; /* primary orange (matches home page) */
+  --color-indigo-deep: #bf360c;
+  --color-indigo-soft: #bf360c;
+  --color-marigold: #ffe0b2;
+  --color-marigold-light: #fff3e0;
+  --color-kumkum: #bf360c;
+  --color-sandstone: #fff3e0;
+  --color-sandstone-deep: #ffcc80;
+  --color-ink: #1f2937;
+  --color-ink-soft: #4b5563;
   --color-paper: #ffffff;
-  --color-leaf: #1f7a4d;
+  --color-leaf: #16a34a;
 
-  --font-display: "Yatra One", "Mukta", serif;
+  --font-display: "Poppins", "Noto Sans Devanagari", sans-serif;
   --font-sans: "Poppins", "Noto Sans Devanagari", system-ui, sans-serif;
 
   --text-base: 1.0625rem; /* 17px — comfortable for older readers */
@@ -41,16 +41,16 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.15;
+    font-weight: 700;
+    line-height: 1.25;
     text-wrap: balance;
-    color: var(--color-indigo-night);
+    color: #1f2937;
   }
   p {
     text-wrap: pretty;
   }
   :focus-visible {
-    outline: 3px solid var(--color-marigold);
+    outline: 3px solid #ff9800;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -93,11 +93,11 @@
     white-space: nowrap;
   }
   .btn-primary {
-    background: var(--color-marigold);
-    color: var(--color-indigo-deep);
+    background: #e65100;
+    color: #fff;
   }
   .btn-primary:hover {
-    background: var(--color-marigold-light);
+    background: #bf360c;
   }
   .btn-whatsapp {
     background: var(--color-leaf);
