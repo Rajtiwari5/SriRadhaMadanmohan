@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/*
+  Sri Madanmohan Tirth Yatra — design tokens
+  Neelkanth indigo carries structure, marigold carries action,
+  kumkum marks the sacred, sandstone is Jaipur's own stone.
+*/
+@theme {
+  --color-indigo-night: #1b2155;
+  --color-indigo-deep: #121641;
+  --color-indigo-soft: #2b3373;
+  --color-marigold: #f2a007;
+  --color-marigold-light: #ffd27a;
+  --color-kumkum: #b3122e;
+  --color-sandstone: #f1e3cf;
+  --color-sandstone-deep: #e3cba9;
+  --color-ink: #23201c;
+  --color-ink-soft: #5a524a;
+  --color-paper: #ffffff;
+  --color-leaf: #1f7a4d;
+
+  --font-display: "Yatra One", "Mukta", serif;
+  --font-sans: "Mukta", system-ui, sans-serif;
+
+  --text-base: 1.0625rem; /* 17px — comfortable for older readers */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.15;
+    text-wrap: balance;
+    color: var(--color-indigo-night);
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-marigold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--color-marigold);
+    color: var(--color-indigo-deep);
+  }
+  .btn-primary:hover {
+    background: var(--color-marigold-light);
+  }
+  .btn-whatsapp {
+    background: var(--color-leaf);
+    color: #fff;
+  }
+  .btn-whatsapp:hover {
+    background: #19663f;
+  }
+  .btn-ghost {
+    border: 1.5px solid currentColor;
+  }
+  .btn-ghost:hover {
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+
+  /* A thin kumkum tilak used as the one recurring sacred mark */
+  .tilak {
+    display: inline-block;
+    width: 0.375rem;
+    height: 1.1em;
+    border-radius: 999px;
+    background: linear-gradient(var(--color-kumkum), var(--color-marigold));
+    vertical-align: -0.15em;
+  }
+
+  /* Departure board */
+  .board {
+    background: var(--color-indigo-deep);
+    color: #fff;
+    border-radius: 1.25rem;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+  .board-cell {
+    font-variant-numeric: tabular-nums;
+  }
+  .flap {
+    display: inline-block;
+    background: rgb(255 255 255 / 0.07);
+    border-radius: 0.3rem;
+    padding: 0.05rem 0.4rem;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.06);
+  }
+  @keyframes flap-in {
+    from {
+      transform: rotateX(-90deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  .board-row {
+    animation: flap-in 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    transform-origin: top;
+  }
+
+  .prose-yatra p + p {
+    margin-top: 1rem;
+  }
+}

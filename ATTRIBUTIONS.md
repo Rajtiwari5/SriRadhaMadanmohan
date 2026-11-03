@@ -1,3 +1,5 @@
-This Figma Make file includes components from [shadcn/ui](https://ui.shadcn.com/) used under [MIT license](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md).
+# Attributions
 
-This Figma Make file includes photos from [Unsplash](https://unsplash.com) used under [license](https://unsplash.com/license).
+Some photos are from [Unsplash](https://unsplash.com) used under the [Unsplash license](https://unsplash.com/license).
+Sri Lanka yatra images are from the organiser's own brochure and poster.
+Fonts: Mukta and Yatra One (SIL Open Font License) via Fontsource.
